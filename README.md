@@ -10,6 +10,12 @@ To install Codeit, you will need to have Python 3 and pip installed on your syst
 pip install git+https://github.com/supervised/codeit
 ```
 
+or 
+
+```bash
+pip install writecode
+```
+
 ## Usage
 
 The main function in Codeit is `codeit.code`, which takes the following keywords:
