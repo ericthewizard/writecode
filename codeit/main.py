@@ -43,9 +43,9 @@ def codeit(prompt, lang='Python', max_tokens=1024, best_of=3, save=None):
     output = response['choices'][0]['text']
 
     # search for excess code at the end
-    if 'Please generate the ' + lang + ' code for the following:\n' in output:
+    if prompt in output:
         logging.info('removing excess at the end of the output...')
-        output = output[:output.find('Please generate the ' + lang + ' code for the following:\n')]
+        output = output[:output.find(prompt)]
 
     if save is not None:
         with open(save, 'w') as f:
