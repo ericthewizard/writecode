@@ -7,7 +7,7 @@ Codeit is a command-line tool that generates code from text prompts using OpenAI
 To install Codeit, you will need to have Python 3 and pip installed on your system. Then, you can use pip to install the Codeit package from PyPI:
 
 ```bash
-pip install codeit
+pip install git+https://github.com/supervised/codeit
 ```
 
 ## Usage
