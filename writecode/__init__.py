@@ -1,4 +1,4 @@
-from .main import writecode
+from .main import writecode, explaincode
 
 
 def code(prompt, lang='Python', max_tokens=256, best_of=3, save=None):
@@ -16,3 +16,7 @@ def code(prompt, lang='Python', max_tokens=256, best_of=3, save=None):
         A string containing the generated code. If the `save` parameter is specified, the code will also be saved to the specified file.
     """
     return writecode(prompt, lang=lang, max_tokens=max_tokens, best_of=best_of, save=save)
+
+
+def explain(prompt, max_tokens=256, best_of=3, save=None):
+    return explaincode(prompt, max_tokens=max_tokens, best_of=best_of, save=save)
