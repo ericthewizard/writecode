@@ -12,7 +12,7 @@ openai.api_key = KEY
 logging.basicConfig(format='%(asctime)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
 
 
-def codeit(prompt, lang='Python', max_tokens=1024, best_of=3, save=None):
+def writecode(prompt, lang='Python', max_tokens=1024, best_of=3, save=None):
     """
     Generates code from a text prompt using OpenAI's Codex model.
 

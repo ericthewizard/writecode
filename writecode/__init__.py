@@ -1,4 +1,4 @@
-from .main import codeit
+from .main import writecode
 
 
 def code(prompt, lang='Python', max_tokens=256, best_of=3, save=None):
@@ -15,4 +15,4 @@ def code(prompt, lang='Python', max_tokens=256, best_of=3, save=None):
     Returns:
         A string containing the generated code. If the `save` parameter is specified, the code will also be saved to the specified file.
     """
-    return codeit(prompt, lang=lang, max_tokens=max_tokens, best_of=best_of, save=save)
+    return writecode(prompt, lang=lang, max_tokens=max_tokens, best_of=best_of, save=save)
