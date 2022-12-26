@@ -27,7 +27,7 @@ def writecode(prompt, lang='Python', max_tokens=1024, best_of=3, save=None):
         A string containing the generated code. If the `save` parameter is specified, the code will also be saved to the specified file.
     """
 
-    prompt = '# ' + lang + ' code for ' + prompt + ', followed by an explanation:\n'
+    prompt = prompt + '\n\n# ' + lang + ' code, followed by an explanation:\n'
 
     response = openai.Completion.create(
         model="code-davinci-002",
