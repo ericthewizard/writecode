@@ -16,7 +16,7 @@ The main function in writecode is `writecode.code`, which takes the following ke
 
 - `prompt` (required): A string containing the text prompt with the instructions for Codex.
 - `lang` (optional): The language to generate code in. The default is Python.
-- `max_tokens` (optional): An integer specifying the maximum number of output tokens.
+- `tokens` (optional): An integer specifying the maximum number of output tokens.
 - `best_of` (optional): An integer specifying the number of completions to generate server-side and return the "best" (the one with the highest log probability per token). The default is 3.
 - `save` (optional): The name of the output file to save the code snippet to.
 
@@ -26,7 +26,7 @@ Here's an example of how to use the `code` function to generate a Python code sn
 from writecode import code
 
 prompt = "Write a function that takes a list of integers and returns the sum of the even numbers in the list."
-code(prompt, lang='python', max_tokens=1000, save='output.py')
+code(prompt, lang='python', tokens=1000, save='output.py')
 ```
 
 This will generate a Python code snippet, followed by an explanation, with up to 1000 tokens and save it to a file called `output.py`.

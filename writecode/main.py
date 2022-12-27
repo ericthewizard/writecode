@@ -27,11 +27,15 @@ def writecode(prompt, lang='Python', max_tokens=1024, best_of=3, save=None):
         A string containing the generated code. If the `save` parameter is specified, the code will also be saved to the specified file.
     """
 
-    prompt = prompt + '\n\n# ' + lang + ' code, followed by an explanation:\n'
+    prompt = "# We're going to generate code in " + lang + " using the following details (stop after generating the " + lang + " code): " + prompt
+    prompt += '\n# The generated code:\n<|endoftext|>'
+
+    print(prompt)
 
     response = openai.Completion.create(
         model="code-davinci-002",
-        prompt=prompt,
+        prompt='-*-*-\n' + prompt,
+        stop='-*-*-\n',
         temperature=0,
         max_tokens=int(max_tokens),
         top_p=1.0,
@@ -43,9 +47,9 @@ def writecode(prompt, lang='Python', max_tokens=1024, best_of=3, save=None):
     output = response['choices'][0]['text']
 
     # search for excess code at the end
-    if prompt in output:
+    if '# The generated code:' in output:
         logging.info('removing excess at the end of the output...')
-        output = output[:output.find(prompt)]
+        output = output[:output.find('# The generated code:')]
 
     if save is not None:
         with open(save, 'w') as f:

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="writecode",
-    version="0.1.1",
+    version="0.1.2",
     description="Write code using OpenAI's Codex model",
     long_description=long_description,
     long_description_content_type="text/markdown",
